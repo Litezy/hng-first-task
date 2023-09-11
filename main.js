@@ -17,17 +17,10 @@ const day = [
 ];
 
 const dayName = day[currentDate.getUTCDay()];
-
-const utcTimeString = ` ${dayName}`;
-
 function updateTime() {
   const currentDate = new Date();
-  const timezone = { timezone: "Africa/Lagos" };
-  const local = currentDate.toLocaleTimeString("en-us", timezone);
   const millisecond = currentDate.getTime();
-  document.querySelector(
-    ".time"
-  ).innerHTML = `Local Time: ${local} | UTC Time in (ms): ${millisecond} `;
+  document.querySelector(".time").innerHTML = ` UTC Time (ms): ${millisecond} `;
 }
 
 daytime.innerHTML = `Day of the Week: ${dayName}`;
